@@ -34,10 +34,24 @@ Via git
 
 ## Modelos usados
 
-#### Random Forest Classification
+#### - Support Vector Machine
+Método de aprendizaje supervisado que se utiliza para la clasificación de valores atípicos. Este modelo se eligio\
+ya que al resolver problemas de clasificación encaja perfecto con la problemática a resolver. 
+
+```http
+  SVC(kernel="linear", C=float("inf"))
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `kernel` | `{‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’}`     | **default=rbf**. Especifica el tipo de kernel que se utilizará en el algoritmo.  |
+| `C` | `float` | **default=1.0**. Parámetro de regularización. |
+
+
+#### - Random Forest Classification
 Método de aprendizaje automático supervisado, que se basa en árboles de decisión.
 
-#### Combinación de las predicciones de Random Forest Classification
+##### Combinación de las predicciones de Random Forest Classification.
 Para los problemas de clasificación, que es nuestro caso, combina los resultados de los árboles de desición usando soft-voting\
 cada árbol de desición da una clasificación y al final la desición con mayor "votos" es la predicción de nuestro análisis.
 
